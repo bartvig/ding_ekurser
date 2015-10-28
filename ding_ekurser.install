@@ -28,3 +28,9 @@ function ding_ekurser_translation_install() {
   $file->filename = basename($file->uri);
   _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'default');
 }
+
+/**
+ * @TODO: Add uninstall hook.
+ *        - remove cache 'ding_ekurser_subject_facets'
+ *        - remove ding_ekurser from search_active_modules
+ */

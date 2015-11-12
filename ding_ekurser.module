@@ -1,7 +1,17 @@
 <?php
+
 /**
  * @file
  * Code for the Ding eKurser feature.
+ *
+ * @TODO: This file have been read but not reviewed as I need more information
+ *        about the project. I have requested access to the google doc (https://docs.google.com/document/d/1bqK1uE5K7s7NVdC09bi3P6KbJSoKg2pFh2KJiuCUONc/edit)
+ *        which I hope explains this module in details as I currently don't
+ *        understand the manipulation of facets and search results.
+ *
+ *        The use of 'ding_ekurser_subject_facets' cache which don't have a
+ *        expire of implemented cache clear! It might make sense but need access
+ *        to the documentation first.
  */
 
 // Path of panel page. Remember to change this constant if the panel changes.
@@ -15,6 +25,13 @@ include_once 'ding_ekurser.features.inc';
  * Set search phrase to 'ekurser.nu', hide facets from facet browser and add
  * facet types.
  * Also hide certain fields via css.
+ *
+ * @TODO: To do a review of this I need more information about why these changes
+ *        to the facet browser is required.
+ *
+ * @TODO: The css added it not targeted at the results displayed in this panel
+ *        only?
+ *
  */
 function ding_ekurser_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id != 'ding_facetbrowser_form' || strpos($form['#action'], '/' . DING_EKURSER_PATH) !== 0) {
